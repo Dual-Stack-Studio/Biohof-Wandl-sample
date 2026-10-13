@@ -9,7 +9,7 @@
 <style>
 :root{--sage:#A9C98B;--mist:#E3EDD2;--paper:#FBF8EE;--wool:#EFE7D3;--ink:#2F3A2B;--orange:#D9702A;--mut:#5f6b57;--yolk:#F2B84B}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:104px}
 body{font-family:Nunito,system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;background-image:radial-gradient(rgba(120,140,90,.07) 1px,transparent 1.2px);background-size:22px 22px}
 a{color:inherit;text-decoration:none}
 .hand{font-family:Caveat,cursive;font-weight:700}
@@ -192,6 +192,45 @@ footer{padding:26px 0 40px;color:var(--mut);font-size:14px;text-align:center}
 header{padding:16px 0 4px}
 .foot-logo{display:block;margin:0 auto 22px;width:104px;height:104px;border-radius:18px;box-shadow:0 10px 24px rgba(80,60,20,.18),0 0 0 1px rgba(60,70,30,.07)}
 @media(max-width:900px){.logo-img{width:100px;height:100px;border-radius:18px}.top{justify-items:center}}
+
+/* floating header: logo + name on the left, menu on the right */
+.hdr{position:fixed;left:0;right:0;top:var(--nh,30px);z-index:80;padding:12px 0;transition:background .35s,box-shadow .35s,padding .35s,top .35s}
+.hdr.solid{top:0;background:rgba(251,248,238,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 8px 28px rgba(60,70,30,.14);padding:7px 0}
+.hdr .wrap.top{display:flex;justify-content:space-between;align-items:center;gap:20px;max-width:1240px}
+.brand{display:flex;align-items:center;gap:14px;min-width:0}
+.hdr .logo-img{width:72px;height:72px;border-radius:16px;transition:width .35s,height .35s,transform .4s,box-shadow .4s}
+.hdr.solid .logo-img{width:54px;height:54px;border-radius:13px}
+.brand:hover .logo-img{transform:scale(1.05) rotate(-1.5deg)}
+.bname b{display:block;font-family:Caveat,cursive;font-weight:700;font-size:40px;line-height:.9;letter-spacing:-.4px;color:var(--ink);transition:font-size .35s}
+.bname small{display:block;font-size:10.5px;font-weight:800;letter-spacing:2.6px;text-transform:uppercase;color:var(--mut);margin-top:3px}
+.hdr.solid .bname b{font-size:33px}
+.menu{display:flex;align-items:center;gap:22px;font-weight:700;font-size:15px}
+.menu>a:not(.navbtn){position:relative;padding:5px 0}
+.menu>a:not(.navbtn):after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;border-radius:2px;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+.menu>a:not(.navbtn):hover:after,.menu>a.act:after{transform:scaleX(1)}
+.menu>a.act{color:var(--orange)}
+.burger{display:none;width:46px;height:46px;border:0;border-radius:14px;background:#fff;box-shadow:0 4px 0 rgba(0,0,0,.14),0 8px 18px rgba(60,70,30,.14);cursor:pointer;padding:0;flex-direction:column;gap:5px;align-items:center;justify-content:center}
+.burger span{display:block;width:22px;height:2.5px;border-radius:2px;background:var(--ink);transition:transform .3s,opacity .3s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+.hero{padding-top:128px}
+@media(max-width:1020px){.bname small{display:none}.menu{gap:16px}}
+@media(max-width:900px){
+  .burger{display:flex}
+  .top nav.menu{display:none}
+  .top nav.menu.open{display:flex;position:fixed;left:12px;right:12px;top:calc(var(--nh,30px) + 82px);flex-direction:column;align-items:stretch;gap:4px;background:#fff;border-radius:24px;padding:16px;box-shadow:0 24px 50px rgba(50,60,20,.28);z-index:90;max-height:calc(100vh - 140px);overflow:auto}
+  .hdr.solid .top nav.menu.open{top:72px}
+  .menu.open>a:not(.navbtn){padding:13px 14px;border-radius:12px;font-size:17px}
+  .menu.open>a:not(.navbtn):after{display:none}
+  .menu.open>a:not(.navbtn):hover{background:#f4efdc}
+  .menu.open .navbtn{text-align:center;padding:14px;margin-top:6px;font-size:17px}
+  .menu.open .socicons{margin:10px 0 0;justify-content:center}
+  .hdr .logo-img{width:56px;height:56px;border-radius:13px}
+  .hdr.solid .logo-img{width:46px;height:46px}
+  .bname b{font-size:32px}.hdr.solid .bname b{font-size:28px}
+  .hero{padding-top:112px}
+}
 </style></head><body>
 <!-- illustrations used as sample images (placeholders until real photos exist) -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
@@ -210,14 +249,15 @@ header{padding:16px 0 4px}
 </defs></svg>
 
 <div class="note">Konzeptentwurf A (v4) „Herz und Hand“ von Dual-Stack Studio · nicht veröffentlicht · Beispielfotos von Wikimedia Commons (Bildnachweis unten), später durch Andreas eigene Fotos ersetzt</div>
-<header><div class="wrap top">
-  <nav><a href="#produkte">Produkte</a><a href="#ueber">Über uns</a></nav>
-  <a class="logo" href="#" aria-label="Biohof Wandl, zum Seitenanfang">
-    <picture><source media="(prefers-reduced-motion: reduce)" srcset="images/logo.webp"><img class="logo-img" src="images/logo-anim.webp" width="546" height="546" alt="Logo Biohof Wandl: Schaf und Ziege vor Feldern und einer Scheune"></picture></a>
-  <nav class="r"><a class="navbtn" href="#unterkunft">Unterkunft</a><a href="#info">Hofverkauf</a><a href="#kontakt">Kontakt</a><span class="socicons"><a class="socicon ig" href="https://www.instagram.com/biohof_wandl/" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a><a class="socicon fb" href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a></span></nav>
+<header class="hdr" id="hdr"><div class="wrap top">
+  <a class="brand" href="#start" aria-label="Biohof Wandl, zum Seitenanfang">
+    <picture><source media="(prefers-reduced-motion: reduce)" srcset="images/logo.webp"><img class="logo-img" src="images/logo-anim.webp" width="546" height="546" alt="Logo Biohof Wandl: Schaf und Ziege vor Feldern und einer Scheune"></picture>
+    <span class="bname"><b>Biohof Wandl</b><small>Bio · Schaf · Ei · Erdäpfel</small></span></a>
+  <button class="burger" id="burger" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+  <nav class="menu" id="menu" aria-label="Hauptmenü"><a href="#produkte">Produkte</a><a href="#ueber">Über uns</a><a href="#info">Hofverkauf</a><a href="#kontakt">Kontakt</a><a class="navbtn" href="#unterkunft">Unterkunft</a><span class="socicons"><a class="socicon ig" href="https://www.instagram.com/biohof_wandl/" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a><a class="socicon fb" href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a></span></nav>
 </div></header>
 
-<section class="hero"><div class="wrap">
+<section class="hero" id="start"><div class="wrap">
   <div class="sign-wrap"><div class="string"></div>
     <div class="sign"><h1><span>Bei uns läuft die Ware</span><span class="b">nicht vom Band,</span><span>wir schaffen noch mit</span><span class="b">Herz und Hand!</span></h1>
       <p>Biobauernhof mit Schafzucht, Geflügelhaltung und ein wenig Ackerbau. Hier erhältst du Bio-Lamm, Bio-Eier und Bio-Kartoffeln.</p>
@@ -351,6 +391,26 @@ header{padding:16px 0 4px}
   function end(){ if(!drag)return; drag=false; track.classList.remove('drag'); if(dx<-w*0.15){next();}else if(dx>w*0.15){prev();}else{set(i,true);} start(); }
   car.addEventListener('pointerup',end); car.addEventListener('pointercancel',end);
   set(0,false); paint(); setTimeout(function(){track.classList.remove('drag');},50); start();
+})();
+</script>
+<script>
+(function(){
+  var nt=document.querySelector('.note'), h=document.getElementById('hdr'), bg=document.getElementById('burger'), mn=document.getElementById('menu');
+  function setNh(){ document.documentElement.style.setProperty('--nh', (nt?nt.offsetHeight:0)+'px'); }
+  setNh(); window.addEventListener('resize',setNh); window.addEventListener('load',setNh);
+  if(document.fonts&&document.fonts.ready){document.fonts.ready.then(setNh);}
+  function onS(){ h.classList.toggle('solid', window.scrollY>(nt?nt.offsetHeight:0)+10); }
+  window.addEventListener('scroll',onS,{passive:true}); onS();
+  function close(){ mn.classList.remove('open'); bg.setAttribute('aria-expanded','false'); bg.setAttribute('aria-label','Menü öffnen'); }
+  bg.addEventListener('click',function(){ var o=mn.classList.toggle('open'); bg.setAttribute('aria-expanded',o?'true':'false'); bg.setAttribute('aria-label',o?'Menü schließen':'Menü öffnen'); });
+  [].forEach.call(mn.querySelectorAll('a'),function(a){ a.addEventListener('click',close); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+  window.addEventListener('resize',function(){ if(window.innerWidth>900) close(); });
+  // highlight the link of the section being read
+  var links=[].slice.call(mn.querySelectorAll('a[href^="#"]:not(.navbtn)'));
+  var map=links.map(function(a){return {a:a,el:document.querySelector(a.getAttribute('href'))};}).filter(function(x){return x.el;});
+  function mark(){ var y=window.scrollY+140, cur=null; map.forEach(function(x){ if(x.el.offsetTop<=y) cur=x; }); map.forEach(function(x){ x.a.classList.toggle('act',x===cur); }); }
+  window.addEventListener('scroll',mark,{passive:true}); mark();
 })();
 </script>
 </body></html>

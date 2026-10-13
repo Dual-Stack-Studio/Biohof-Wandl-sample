@@ -14,3 +14,9 @@ Nur Platzhalter für den Entwurf. Vor dem Veröffentlichen durch eigene Fotos er
 - **Kartoffeln** (`images/kartoffeln.jpg`): „Dieng Potatoes.jpg“ von Midori, CC BY-SA 3.0. Quelle: https://commons.wikimedia.org/wiki/File:Dieng_Potatoes.jpg
 - **Lammfleisch** (`images/lammfleisch.jpg`): „Raw lamb cutlets with shredded ginger and rosemary.jpg“ von Photo by User:Salimfadhley, CC BY-SA 3.0. Quelle: https://commons.wikimedia.org/wiki/File:Raw_lamb_cutlets_with_shredded_ginger_and_rosemary.jpg
 - **Honig** (`images/honig.jpg`): „Honey miele.jpg“ von Marcobeltrametti, CC BY-SA 4.0. Quelle: https://commons.wikimedia.org/wiki/File:Honey_miele.jpg
+- **Bauernhaus mit Holzbalkon** (`images/haus1.jpg`): „Bad Wiessee Bauernhaus 1.jpg“ von Stefan Meister, CC BY-SA 4.0. Quelle: https://commons.wikimedia.org/wiki/File:Bad_Wiessee_Bauernhaus_1.jpg
+- **Hofansicht mit blauem Himmel** (`images/haus2.jpg`): „Bayerzell Bayerzell 5 Bauernhaus 001.jpg“ von K.Baas, CC BY-SA 4.0. Quelle: https://commons.wikimedia.org/wiki/File:Bayerzell_Bayerzell_5_Bauernhaus_001.jpg
+- **Helle Ferienwohnung** (`images/haus3.jpg`): „Ferienwohnung "Schlossblick".jpg“ von Berghof77, CC BY-SA 4.0. Quelle: https://commons.wikimedia.org/wiki/File:Ferienwohnung_%22Schlossblick%22.jpg
+- **Gemütliche Bauernstube** (`images/haus4.jpg`): „Kruzifix Bauernstube 274436.jpg“ von Harald Bischoff, CC BY-SA 3.0. Quelle: https://commons.wikimedia.org/wiki/File:Kruzifix_Bauernstube_274436.jpg
+- **Hof im Grünen** (`images/haus5.jpg`): „Einsiedeln IMG 2819.JPG“ von Roland zh, CC BY-SA 3.0. Quelle: https://commons.wikimedia.org/wiki/File:Einsiedeln_IMG_2819.JPG
+- **Weide vor dem Hof** (`images/haus6.jpg`): „Perlbachtal 2014 034.JPG“ von Rosa-Maria Rinkl, CC BY-SA 3.0. Quelle: https://commons.wikimedia.org/wiki/File:Perlbachtal_2014_034.JPG

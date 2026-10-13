@@ -82,7 +82,7 @@ h2.hand{font-size:clamp(40px,5vw,60px);line-height:1;letter-spacing:-.5px}
 .unterkunft .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
 .house{position:relative}
 .house .pic{aspect-ratio:4/3.3;transform:rotate(-1.2deg)}
-.rating{position:absolute;right:-14px;bottom:-18px;background:var(--yolk);color:var(--ink);border-radius:14px;padding:10px 16px;font-weight:800;box-shadow:0 10px 22px rgba(80,60,0,.22);transform:rotate(3deg);line-height:1.15;font-size:14px}
+.rating{position:absolute;right:-14px;bottom:-62px;background:var(--yolk);color:var(--ink);border-radius:14px;padding:10px 16px;font-weight:800;box-shadow:0 10px 22px rgba(80,60,0,.22);transform:rotate(3deg);line-height:1.15;font-size:14px}
 .rating b{font-family:Caveat,cursive;font-size:30px;display:block}
 .facts{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px 18px;margin:18px 0 22px}
 .facts li{font-weight:700;font-size:15px;padding-left:24px;position:relative}
@@ -101,7 +101,7 @@ input,select,textarea{width:100%;font:inherit;padding:13px 15px;border-radius:10
 textarea{min-height:100px}
 .chk{display:flex;gap:10px;font-size:13px;color:var(--mut)}.chk input{width:18px;height:18px}
 footer{padding:26px 0 40px;color:var(--mut);font-size:14px;text-align:center}
-@media(max-width:900px){.top nav{display:none}.top{grid-template-columns:1fr}.tags,.info .g,.hof .wrap,.r2,.unterkunft .wrap{grid-template-columns:1fr}.gal .grid{grid-template-columns:1fr 1fr}.facts{grid-template-columns:1fr}.sign{padding:36px 22px 40px;border-width:10px}.stamp{right:-6px;width:96px;height:96px;font-size:19px}.stamp b{font-size:27px}.sign h1 .b{padding-left:0}.sign h1{font-size:32px}.rating{right:6px}.unterkunft{padding:64px 0}}
+@media(max-width:900px){.top nav{display:none}.top{grid-template-columns:1fr}.tags,.info .g,.hof .wrap,.r2,.unterkunft .wrap{grid-template-columns:1fr}.gal .grid{grid-template-columns:1fr 1fr}.facts{grid-template-columns:1fr}.sign{padding:36px 22px 40px;border-width:10px}.stamp{right:-6px;width:96px;height:96px;font-size:19px}.stamp b{font-size:27px}.sign h1 .b{padding-left:0}.sign h1{font-size:32px}.rating{right:6px}.house{margin-bottom:64px}.unterkunft{padding:64px 0}}
 
 .soc{display:inline-flex;align-items:center;gap:10px;padding:13px 24px;border-radius:14px;font-weight:800;color:#fff;box-shadow:0 5px 0 rgba(0,0,0,.2);transition:transform .15s}
 .soc:hover{transform:translateY(-2px)}
@@ -165,6 +165,24 @@ footer{padding:26px 0 40px;color:var(--mut);font-size:14px;text-align:center}
 .credits li{margin:3px 0}
 .credits a{color:#46603a;text-decoration:underline}
 @media(max-width:900px){.ueber-grid{grid-template-columns:1fr}.ueber{padding:64px 0}.play{width:70px;height:70px;margin:-35px 0 0 -35px}.play svg{width:32px;height:32px}.vals{grid-template-columns:1fr 1fr 1fr}}
+
+.car{position:relative;aspect-ratio:4/3.3;border:10px solid #fff;border-radius:8px;box-shadow:0 20px 40px rgba(60,70,30,.2);transform:rotate(-1.2deg);overflow:hidden;background:#d8e7c4;touch-action:pan-y;user-select:none;-webkit-user-select:none;outline-offset:4px}
+.track{display:flex;height:100%;transition:transform .95s cubic-bezier(.65,0,.25,1);will-change:transform}
+.track.drag{transition:none}
+.slide{position:relative;flex:0 0 100%;height:100%;margin:0;overflow:hidden}
+.slide img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;transform:scale(1);transition:transform 8s ease-out}
+.slide.on img{transform:scale(1.08)}
+.slide figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 20px 38px;color:#fff;font-family:Caveat,cursive;font-weight:700;font-size:30px;line-height:1;background:linear-gradient(0deg,rgba(18,28,10,.7),transparent);pointer-events:none}
+.cartag{position:absolute;top:12px;left:12px;z-index:4;background:#fff;padding:5px 11px;font-size:12px;font-weight:800;border-radius:4px}
+.cnav{position:absolute;top:50%;z-index:4;width:44px;height:44px;margin-top:-22px;border:0;border-radius:50%;background:rgba(255,255,255,.88);color:var(--ink);font-size:30px;line-height:1;cursor:pointer;display:grid;place-items:center;padding:0 0 4px;box-shadow:0 6px 16px rgba(0,0,0,.25);opacity:0;transition:opacity .25s,transform .2s}
+.cnav:hover{transform:scale(1.1)}
+.car:hover .cnav,.car:focus-within .cnav{opacity:1}
+.cnav.prev{left:12px}.cnav.next{right:12px}
+.dots{position:absolute;left:0;right:0;bottom:12px;z-index:4;display:flex;justify-content:center;gap:8px;pointer-events:none}
+.dots button{pointer-events:auto;width:10px;height:10px;border-radius:50%;border:0;padding:0;background:rgba(255,255,255,.55);cursor:pointer;transition:width .3s,background .3s}
+.dots button.on{width:28px;border-radius:6px;background:#fff}
+@media(hover:none){.cnav{opacity:.9;width:38px;height:38px;margin-top:-19px;font-size:26px}}
+@media(prefers-reduced-motion:reduce){.track{transition:none}.slide img{transition:none;transform:none!important}}
 </style></head><body>
 <!-- illustrations used as sample images (placeholders until real photos exist) -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
@@ -249,7 +267,13 @@ footer{padding:26px 0 40px;color:var(--mut);font-size:14px;text-align:center}
 </div></section>
 
 <section class="unterkunft" id="unterkunft"><div class="wrap">
-  <div class="house"><div class="pic"><span>Beispielbild · echte Fotos auf Airbnb</span><svg viewBox="0 0 400 330"><use href="#haus"/></svg></div>
+  <div class="house"><div class="car" id="car" role="region" aria-roledescription="carousel" aria-label="Fotos der Unterkunft (Beispielbilder)" tabindex="0">
+      <span class="cartag">Beispielbilder · echte Fotos auf Airbnb</span>
+      <div class="track" id="track"><figure class="slide"><img src="images/haus1.jpg" alt="Altes Bauernhaus mit Holzbalkon und Fensterläden" decoding="async"><figcaption>Bauernhaus mit Holzbalkon</figcaption></figure><figure class="slide"><img src="images/haus2.jpg" alt="Weißes Bauernhaus mit gelben Verzierungen unter blauem Himmel" decoding="async"><figcaption>Hofansicht mit blauem Himmel</figcaption></figure><figure class="slide"><img src="images/haus3.jpg" alt="Helle Ferienwohnung mit Esstisch und Blick aus dem Fenster" decoding="async"><figcaption>Helle Ferienwohnung</figcaption></figure><figure class="slide"><img src="images/haus4.jpg" alt="Gemütliche Bauernstube mit Holztisch und Bank" decoding="async"><figcaption>Gemütliche Bauernstube</figcaption></figure><figure class="slide"><img src="images/haus5.jpg" alt="Holzhaus und Scheune auf einer grünen Wiese" decoding="async"><figcaption>Hof im Grünen</figcaption></figure><figure class="slide"><img src="images/haus6.jpg" alt="Hof mit Kühen auf der Weide vor einem bewaldeten Hügel" decoding="async"><figcaption>Weide vor dem Hof</figcaption></figure></div>
+      <button class="cnav prev" id="cprev" type="button" aria-label="Vorheriges Foto">‹</button>
+      <button class="cnav next" id="cnext" type="button" aria-label="Nächstes Foto">›</button>
+      <div class="dots" id="cdots"></div>
+    </div>
     <div class="rating"><b>4,97 ★</b>31 Bewertungen · Gästefavorit auf Airbnb</div></div>
   <div><h2 class="hand">Urlaub am Schafhof</h2>
     <p class="lead">Ferienwohnung direkt neben dem Hof: Ruhe auf dem Land, Tiere zum Anschauen und frische Bio-Produkte gleich nebenan.</p>
@@ -271,7 +295,7 @@ footer{padding:26px 0 40px;color:var(--mut);font-size:14px;text-align:center}
     <button class="btn o" type="button" style="justify-self:start;font-size:16px">Anfrage senden</button></form></div>
 </div></section>
 <footer class="foot2"><div class="followrow"><span class="hand">Folge uns!</span><a class="soc ig" href="https://www.instagram.com/biohof_wandl/" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg>Instagram</a><a class="soc fb" href="https://www.facebook.com/" target="_blank" rel="noopener"><svg><use href="#i-fb"/></svg>Facebook</a></div>© Biohof Wandl · Impressum · Datenschutz
-<details class="credits"><summary>Bildnachweis der Beispielfotos</summary><ul><li><b>Schafe auf der Weide</b>: „Sheep grazing meadow at Bawk House Farm - geograph.org.uk - 2693002.jpg“ von Dr Duncan Pepper, CC BY-SA 2.0 · <a href="https://commons.wikimedia.org/wiki/File:Sheep_grazing_meadow_at_Bawk_House_Farm_-_geograph.org.uk_-_2693002.jpg" target="_blank" rel="noopener">Quelle</a></li><li><b>Weide mit Schafen</b>: „Sheep near The Meadows Farm - geograph.org.uk - 8293574.jpg“ von Philip Halling, CC BY-SA 2.0 · <a href="https://commons.wikimedia.org/wiki/File:Sheep_near_The_Meadows_Farm_-_geograph.org.uk_-_8293574.jpg" target="_blank" rel="noopener">Quelle</a></li><li><b>Lämmer</b>: „Lambs, Morden Hall Park.jpg“ von Keven Law, Los Angeles, USA, CC BY-SA 2.0 · <a href="https://commons.wikimedia.org/wiki/File:Lambs,_Morden_Hall_Park.jpg" target="_blank" rel="noopener">Quelle</a></li><li><b>Ziegen</b>: „Capra aegagrus hircus, Neuss (DE) -- 2023 -- 0012.jpg“ von Anil Öztas, CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Capra_aegagrus_hircus,_Neuss_(DE)_--_2023_--_0012.jpg" target="_blank" rel="noopener">Quelle</a></li><li><b>Zicklein</b>: „Capra aegagrus hircus, Neuss (DE) -- 2022 -- 0174.jpg“ von Anil Öztas, CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Capra_aegagrus_hircus,_Neuss_(DE)_--_2022_--_0174.jpg" target="_blank" rel="noopener">Quelle</a></li><li><b>Hühner</b>: „Chicken free range 1.jpg“ von AnemoneProjectors (talk) (Flickr), CC BY-SA 2.0 · <a href="https://commons.wikimedia.org/wiki/File:Chicken_free_range_1.jpg" target="_blank" rel="noopener">Quelle</a></li><li><b>Hühner im Freiland</b>: „Mobiles Stallsystem &quot;Hühnermobil&quot; der Firma Weiland.jpg“ von Lulatsch3000, CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Mobiles_Stallsystem_%22H%C3%BChnermobil%22_der_Firma_Weiland.jpg" target="_blank" rel="noopener">Quelle</a></li><li><b>Enten</b>: „Domestic ducks don&#x27;t need a pond.jpg“ von Julyro, CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Domestic_ducks_don%27t_need_a_pond.jpg" target="_blank" rel="noopener">Quelle</a></li><li><b>Bio-Eier</b>: „Eggs 20220410 173301.jpg“ von Ka23 13, CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Eggs_20220410_173301.jpg" target="_blank" rel="noopener">Quelle</a></li><li><b>Kartoffeln</b>: „Dieng Potatoes.jpg“ von Midori, CC BY-SA 3.0 · <a href="https://commons.wikimedia.org/wiki/File:Dieng_Potatoes.jpg" target="_blank" rel="noopener">Quelle</a></li><li><b>Lammfleisch</b>: „Raw lamb cutlets with shredded ginger and rosemary.jpg“ von Photo by User:Salimfadhley, CC BY-SA 3.0 · <a href="https://commons.wikimedia.org/wiki/File:Raw_lamb_cutlets_with_shredded_ginger_and_rosemary.jpg" target="_blank" rel="noopener">Quelle</a></li><li><b>Honig</b>: „Honey miele.jpg“ von Marcobeltrametti, CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Honey_miele.jpg" target="_blank" rel="noopener">Quelle</a></li></ul><p>Alle Fotos über Wikimedia Commons, Lizenzen: CC BY-SA 2.0 / 3.0 / 4.0. Nur Platzhalter für diesen Entwurf.</p></details></footer>
+<details class="credits"><summary>Bildnachweis der Beispielfotos</summary><ul><li><b>Schafe auf der Weide</b>: „Sheep grazing meadow at Bawk House Farm - geograph.org.uk - 2693002.jpg“ von Dr Duncan Pepper, CC BY-SA 2.0 · <a href="https://commons.wikimedia.org/wiki/File:Sheep_grazing_meadow_at_Bawk_House_Farm_-_geograph.org.uk_-_2693002.jpg" target="_blank" rel="noopener">Quelle</a></li><li><b>Weide mit Schafen</b>: „Sheep near The Meadows Farm - geograph.org.uk - 8293574.jpg“ von Philip Halling, CC BY-SA 2.0 · <a href="https://commons.wikimedia.org/wiki/File:Sheep_near_The_Meadows_Farm_-_geograph.org.uk_-_8293574.jpg" target="_blank" rel="noopener">Quelle</a></li><li><b>Lämmer</b>: „Lambs, Morden Hall Park.jpg“ von Keven Law, Los Angeles, USA, CC BY-SA 2.0 · <a href="https://commons.wikimedia.org/wiki/File:Lambs,_Morden_Hall_Park.jpg" target="_blank" rel="noopener">Quelle</a></li><li><b>Ziegen</b>: „Capra aegagrus hircus, Neuss (DE) -- 2023 -- 0012.jpg“ von Anil Öztas, CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Capra_aegagrus_hircus,_Neuss_(DE)_--_2023_--_0012.jpg" target="_blank" rel="noopener">Quelle</a></li><li><b>Zicklein</b>: „Capra aegagrus hircus, Neuss (DE) -- 2022 -- 0174.jpg“ von Anil Öztas, CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Capra_aegagrus_hircus,_Neuss_(DE)_--_2022_--_0174.jpg" target="_blank" rel="noopener">Quelle</a></li><li><b>Hühner</b>: „Chicken free range 1.jpg“ von AnemoneProjectors (talk) (Flickr), CC BY-SA 2.0 · <a href="https://commons.wikimedia.org/wiki/File:Chicken_free_range_1.jpg" target="_blank" rel="noopener">Quelle</a></li><li><b>Hühner im Freiland</b>: „Mobiles Stallsystem &quot;Hühnermobil&quot; der Firma Weiland.jpg“ von Lulatsch3000, CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Mobiles_Stallsystem_%22H%C3%BChnermobil%22_der_Firma_Weiland.jpg" target="_blank" rel="noopener">Quelle</a></li><li><b>Enten</b>: „Domestic ducks don&#x27;t need a pond.jpg“ von Julyro, CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Domestic_ducks_don%27t_need_a_pond.jpg" target="_blank" rel="noopener">Quelle</a></li><li><b>Bio-Eier</b>: „Eggs 20220410 173301.jpg“ von Ka23 13, CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Eggs_20220410_173301.jpg" target="_blank" rel="noopener">Quelle</a></li><li><b>Kartoffeln</b>: „Dieng Potatoes.jpg“ von Midori, CC BY-SA 3.0 · <a href="https://commons.wikimedia.org/wiki/File:Dieng_Potatoes.jpg" target="_blank" rel="noopener">Quelle</a></li><li><b>Lammfleisch</b>: „Raw lamb cutlets with shredded ginger and rosemary.jpg“ von Photo by User:Salimfadhley, CC BY-SA 3.0 · <a href="https://commons.wikimedia.org/wiki/File:Raw_lamb_cutlets_with_shredded_ginger_and_rosemary.jpg" target="_blank" rel="noopener">Quelle</a></li><li><b>Honig</b>: „Honey miele.jpg“ von Marcobeltrametti, CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Honey_miele.jpg" target="_blank" rel="noopener">Quelle</a></li><li><b>Bauernhaus mit Holzbalkon</b>: „Bad Wiessee Bauernhaus 1.jpg“ von Stefan Meister, CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Bad_Wiessee_Bauernhaus_1.jpg" target="_blank" rel="noopener">Quelle</a></li><li><b>Hofansicht mit blauem Himmel</b>: „Bayerzell Bayerzell 5 Bauernhaus 001.jpg“ von K.Baas, CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Bayerzell_Bayerzell_5_Bauernhaus_001.jpg" target="_blank" rel="noopener">Quelle</a></li><li><b>Helle Ferienwohnung</b>: „Ferienwohnung &quot;Schlossblick&quot;.jpg“ von Berghof77, CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Ferienwohnung_%22Schlossblick%22.jpg" target="_blank" rel="noopener">Quelle</a></li><li><b>Gemütliche Bauernstube</b>: „Kruzifix Bauernstube 274436.jpg“ von Harald Bischoff, CC BY-SA 3.0 · <a href="https://commons.wikimedia.org/wiki/File:Kruzifix_Bauernstube_274436.jpg" target="_blank" rel="noopener">Quelle</a></li><li><b>Hof im Grünen</b>: „Einsiedeln IMG 2819.JPG“ von Roland zh, CC BY-SA 3.0 · <a href="https://commons.wikimedia.org/wiki/File:Einsiedeln_IMG_2819.JPG" target="_blank" rel="noopener">Quelle</a></li><li><b>Weide vor dem Hof</b>: „Perlbachtal 2014 034.JPG“ von Rosa-Maria Rinkl, CC BY-SA 3.0 · <a href="https://commons.wikimedia.org/wiki/File:Perlbachtal_2014_034.JPG" target="_blank" rel="noopener">Quelle</a></li></ul><p>Alle Fotos über Wikimedia Commons, Lizenzen: CC BY-SA 2.0 / 3.0 / 4.0. Nur Platzhalter für diesen Entwurf.</p></details></footer>
 <div class="floatfollow"><span>Folge uns</span><a class="fi ig" href="https://www.instagram.com/biohof_wandl/" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a><a class="fi fb" href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a></div>
 <script>
 (function(){
@@ -287,6 +311,38 @@ footer{padding:26px 0 40px;color:var(--mut);font-size:14px;text-align:center}
     var p=v.play(); if(p&&p.catch){p.catch(function(){});}
   });
   v.addEventListener('ended',function(){box.classList.remove('playing');v.removeAttribute('controls');});
+})();
+</script>
+<script>
+(function(){
+  var car=document.getElementById('car'), track=document.getElementById('track'), dotsBox=document.getElementById('cdots');
+  var slides=[].slice.call(track.children), N=slides.length, i=0, timer=null, lock=false;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  track.appendChild(slides[0].cloneNode(true));                 // clone of the first slide: endless loop without a jump
+  track.lastChild.setAttribute('aria-hidden','true');
+  var dots=slides.map(function(_,k){var d=document.createElement('button');d.type='button';d.setAttribute('aria-label','Foto '+(k+1));d.addEventListener('click',function(){go(k);restart();});dotsBox.appendChild(d);return d;});
+  function paint(){slides.forEach(function(s,k){s.classList.toggle('on',k===i%N);});dots.forEach(function(d,k){d.classList.toggle('on',k===i%N);});}
+  function set(n,anim){track.classList.toggle('drag',!anim);track.style.transform='translateX('+(-100*n)+'%)';}
+  function go(n){ if(lock)return; i=n; set(i,true); paint(); }
+  function next(){ if(lock)return; if(i>=N){i=0;set(0,false);void track.offsetWidth;} i++; set(i,true); paint(); }
+  function prev(){ if(lock)return; if(i<=0){i=N;set(N,false);void track.offsetWidth;} i--; set(i,true); paint(); }
+  track.addEventListener('transitionend',function(e){ if(e.target!==track)return; if(i>=N){i=0;set(0,false);paint();} });
+  function start(){ if(reduce||timer)return; timer=setInterval(next,5200); }
+  function stop(){ clearInterval(timer); timer=null; }
+  function restart(){ stop(); start(); }
+  document.getElementById('cnext').addEventListener('click',function(){next();restart();});
+  document.getElementById('cprev').addEventListener('click',function(){prev();restart();});
+  car.addEventListener('mouseenter',stop); car.addEventListener('mouseleave',start);
+  car.addEventListener('focusin',stop); car.addEventListener('focusout',start);
+  car.addEventListener('keydown',function(e){ if(e.key==='ArrowRight'){next();restart();} if(e.key==='ArrowLeft'){prev();restart();} });
+  document.addEventListener('visibilitychange',function(){ document.hidden?stop():start(); });
+  // swipe / drag with a finger or the mouse
+  var sx=0,dx=0,drag=false,w=1;
+  car.addEventListener('pointerdown',function(e){ if(e.target.closest('button'))return; drag=true; sx=e.clientX; dx=0; w=car.clientWidth; stop(); if(i>=N){i=0;set(0,false);} track.classList.add('drag'); try{car.setPointerCapture(e.pointerId);}catch(_){} });
+  car.addEventListener('pointermove',function(e){ if(!drag)return; dx=e.clientX-sx; track.style.transform='translateX(calc('+(-100*i)+'% + '+dx+'px))'; });
+  function end(){ if(!drag)return; drag=false; track.classList.remove('drag'); if(dx<-w*0.15){next();}else if(dx>w*0.15){prev();}else{set(i,true);} start(); }
+  car.addEventListener('pointerup',end); car.addEventListener('pointercancel',end);
+  set(0,false); paint(); setTimeout(function(){track.classList.remove('drag');},50); start();
 })();
 </script>
 </body></html>

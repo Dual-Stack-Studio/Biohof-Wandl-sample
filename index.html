@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="description" content="Konzeptentwurf von Dual-Stack Studio für Biohof Wandl. Nicht die offizielle Website.">
+<title>Biohof Wandl – Entwurf A (v4) · Herz und Hand</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--sage:#A9C98B;--mist:#E3EDD2;--paper:#FBF8EE;--wool:#EFE7D3;--ink:#2F3A2B;--orange:#D9702A;--mut:#5f6b57;--yolk:#F2B84B}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Nunito,system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;background-image:radial-gradient(rgba(120,140,90,.07) 1px,transparent 1.2px);background-size:22px 22px}
+a{color:inherit;text-decoration:none}
+.hand{font-family:Caveat,cursive;font-weight:700}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+.note{background:#fff7e0;color:#7a5b00;text-align:center;font-size:12px;font-weight:700;padding:6px}
+header{padding:22px 0 8px}
+header .wrap.top{max-width:1240px}
+.top{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;column-gap:26px}
+.top nav{display:flex;gap:20px;font-weight:700;font-size:15px;align-items:center}
+.top nav.r{justify-content:flex-end}
+.top nav a:hover{color:var(--orange)}
+.navbtn{background:var(--orange);color:#fff;padding:9px 18px;border-radius:12px;box-shadow:0 4px 0 rgba(0,0,0,.16);font-weight:800}
+.top nav a.navbtn:hover{color:#fff;transform:translateY(-1px)}
+.logo{text-align:center;line-height:.9}
+.logo .w{font-family:Caveat,cursive;font-weight:700;font-size:44px;letter-spacing:-.5px;color:var(--ink);display:block}
+.logo .s{font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--mut)}
+.logo svg{display:block;margin:0 auto 2px}
+.hero{padding:34px 0 80px;position:relative}
+.sign-wrap{position:relative;max-width:820px;margin:34px auto 0;padding-top:26px}
+.string{position:absolute;top:0;left:50%;width:260px;height:44px;transform:translateX(-50%);border:3px solid #8a7a5a;border-bottom:0;border-radius:130px 130px 0 0}
+.sign{background:#F4F0E1;border:14px solid var(--orange);border-radius:10px;padding:46px 40px 50px;text-align:center;box-shadow:0 26px 50px rgba(80,60,20,.22);transform:rotate(-1.2deg);position:relative}
+.sign:before,.sign:after{content:"";position:absolute;top:12px;width:12px;height:12px;border-radius:50%;background:#8a7a5a}
+.sign:before{left:16px}.sign:after{right:16px}
+.sign h1{font-family:Caveat,cursive;font-weight:700;font-size:clamp(34px,6.2vw,74px);line-height:1.02;color:#4a3a4f;letter-spacing:-.5px}
+.sign h1 span{display:block}
+.sign h1 .b{color:var(--ink);padding-left:18%}
+.sign p{margin-top:16px;font-size:18px;color:var(--mut);max-width:560px;margin-left:auto;margin-right:auto}
+.stamp{position:absolute;right:-26px;bottom:-30px;width:122px;height:122px;border-radius:50%;background:var(--sage);border:3px dashed var(--ink);display:grid;place-items:center;text-align:center;transform:rotate(10deg);font-family:Caveat,cursive;font-weight:700;font-size:24px;line-height:1;color:var(--ink)}
+.stamp b{display:block;font-size:34px}
+.btnrow{display:flex;gap:14px;justify-content:center;margin-top:58px;flex-wrap:wrap}
+.btn{display:inline-block;background:var(--ink);color:#fff;padding:14px 28px;border-radius:12px;font-weight:800;box-shadow:0 5px 0 rgba(0,0,0,.18);transition:transform .15s;border:0;font:inherit;font-weight:800;cursor:pointer}
+.btn:hover{transform:translateY(-2px)}
+.btn.o{background:var(--orange)}
+.btn.ghost{background:#fff;color:var(--ink);box-shadow:0 5px 0 rgba(0,0,0,.1);border:2px solid var(--ink)}
+.band{background:var(--sage);padding:72px 0 80px;position:relative}
+.band:before{content:"";position:absolute;left:0;right:0;top:-1px;height:26px;background:var(--paper);clip-path:ellipse(60% 100% at 50% 0)}
+h2.hand{font-size:clamp(40px,5vw,60px);line-height:1;letter-spacing:-.5px}
+.lead{font-size:18px;color:var(--mut);max-width:580px;margin-top:8px}
+.tags{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:46px}
+.tag{background:#fff;border-radius:6px 6px 18px 18px;padding:40px 24px 24px;position:relative;box-shadow:0 14px 30px rgba(50,70,30,.16);transform:rotate(var(--r,0deg))}
+.tag:nth-child(1){--r:-1.4deg}.tag:nth-child(2){--r:.8deg}.tag:nth-child(3){--r:-.6deg}
+.tag:before{content:"";position:absolute;top:12px;left:50%;width:16px;height:16px;border-radius:50%;background:#A9C98B;box-shadow:inset 0 0 0 3px #fff,0 0 0 2px #8a7a5a;transform:translateX(-50%)}
+.tag .pic2{height:150px;border-radius:10px;background:var(--mist);margin-bottom:12px;overflow:hidden}
+.tag .pic2 img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.tag:hover .pic2 img{transform:scale(1.06)}
+.tag h3{font-family:Caveat,cursive;font-size:34px;line-height:1;margin-bottom:4px}
+.tag p{color:var(--mut);font-size:15.5px}
+.tag .row{display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-weight:800;font-size:14px;border-top:2px dotted #d9d2bd;padding-top:12px}
+.more{margin-top:40px;text-align:center}
+.more .hand{font-size:32px;display:block;margin-bottom:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;max-width:760px;margin:0 auto}
+.chip{background:#fff;border:2px dashed #8a7a5a;border-radius:99px;padding:6px 16px;font-weight:700;font-size:14.5px}
+.small{font-size:13px;color:#46603a;margin-top:14px}
+.hof{padding:84px 0}
+.hof .wrap{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+.pic{background:linear-gradient(150deg,#d8e7c4,#a9c98b);border-radius:8px;aspect-ratio:1/1.05;border:10px solid #fff;box-shadow:0 20px 40px rgba(60,70,30,.18);transform:rotate(1.4deg);position:relative;display:grid;place-items:end center;overflow:hidden}
+.pic span{position:absolute;top:14px;left:14px;background:#fff;padding:5px 11px;font-size:12px;font-weight:800;border-radius:4px;z-index:2}
+.pic svg{width:100%;display:block}
+.quote{font-family:Caveat,cursive;font-size:34px;line-height:1.08;margin:14px 0;color:var(--orange)}
+.animals{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.animals span{background:var(--mist);border-radius:99px;padding:6px 16px;font-weight:800;font-size:14px}
+.gal{background:var(--wool);padding:76px 0 84px}
+.gal .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:40px}
+.polaroid{background:#fff;padding:10px 10px 12px;box-shadow:0 12px 26px rgba(70,60,30,.2);transform:rotate(var(--r,0deg));transition:transform .2s}
+.polaroid:hover{transform:rotate(0) scale(1.03)}
+.polaroid:nth-child(4n+1){--r:-2deg}.polaroid:nth-child(4n+2){--r:1.5deg}.polaroid:nth-child(4n+3){--r:-1deg}.polaroid:nth-child(4n+4){--r:2deg}
+.polaroid .im{aspect-ratio:1/1;display:grid;place-items:center;overflow:hidden}
+.polaroid .im img{width:100%;height:100%;object-fit:cover;display:block}
+.polaroid p{font-family:Caveat,cursive;font-size:23px;text-align:center;margin-top:6px;line-height:1}
+.polaroid small{display:block;text-align:center;font-size:10.5px;color:#9a9378;letter-spacing:.5px;margin-top:2px}
+.unterkunft{padding:90px 0}
+.unterkunft .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.house{position:relative}
+.house .pic{aspect-ratio:4/3.3;transform:rotate(-1.2deg)}
+.rating{position:absolute;right:-14px;bottom:-18px;background:var(--yolk);color:var(--ink);border-radius:14px;padding:10px 16px;font-weight:800;box-shadow:0 10px 22px rgba(80,60,0,.22);transform:rotate(3deg);line-height:1.15;font-size:14px}
+.rating b{font-family:Caveat,cursive;font-size:30px;display:block}
+.facts{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px 18px;margin:18px 0 22px}
+.facts li{font-weight:700;font-size:15px;padding-left:24px;position:relative}
+.facts li:before{content:"✓";position:absolute;left:0;color:var(--orange);font-weight:900}
+.cta2{display:flex;gap:14px;flex-wrap:wrap;margin-top:6px}
+.hint{font-size:13px;color:var(--mut);margin-top:12px}
+.info{background:var(--wool);padding:64px 0}
+.info .g{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:30px}
+.info .c{background:var(--paper);border:2px dashed #b9ad8a;border-radius:16px;padding:22px}
+.info h3{font-family:Caveat,cursive;font-size:32px;line-height:1}
+.kontakt{padding:84px 0}
+.kontakt .wrap{max-width:820px}
+.card{background:#fff;border-radius:22px;padding:36px;margin-top:26px;box-shadow:0 20px 44px rgba(60,70,30,.14);border-top:10px solid var(--sage)}
+form{display:grid;gap:14px}.r2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+input,select,textarea{width:100%;font:inherit;padding:13px 15px;border-radius:10px;border:2px solid #dcd6c0;background:var(--paper);color:var(--ink)}
+textarea{min-height:100px}
+.chk{display:flex;gap:10px;font-size:13px;color:var(--mut)}.chk input{width:18px;height:18px}
+footer{padding:26px 0 40px;color:var(--mut);font-size:14px;text-align:center}
+@media(max-width:900px){.top nav{display:none}.top{grid-template-columns:1fr}.tags,.info .g,.hof .wrap,.r2,.unterkunft .wrap{grid-template-columns:1fr}.gal .grid{grid-template-columns:1fr 1fr}.facts{grid-template-columns:1fr}.sign{padding:36px 22px 40px;border-width:10px}.stamp{right:-6px;width:96px;height:96px;font-size:19px}.stamp b{font-size:27px}.sign h1 .b{padding-left:0}.sign h1{font-size:32px}.rating{right:6px}.unterkunft{padding:64px 0}}
+
+.soc{display:inline-flex;align-items:center;gap:10px;padding:13px 24px;border-radius:14px;font-weight:800;color:#fff;box-shadow:0 5px 0 rgba(0,0,0,.2);transition:transform .15s}
+.soc:hover{transform:translateY(-2px)}
+.soc svg{width:24px;height:24px;fill:#fff;flex:none}
+.soc.ig,.socicon.ig,.fi.ig{background:linear-gradient(135deg,#F58529 0%,#DD2A7B 52%,#8134AF 100%)}
+.soc.fb,.socicon.fb,.fi.fb{background:#1877F2}
+.soc small{display:block;font-weight:600;font-size:12px;opacity:.9;line-height:1.1}
+.soc b{display:block;line-height:1.15}
+.socicons{display:flex;gap:8px;margin-left:6px}
+.socicon{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;box-shadow:0 3px 0 rgba(0,0,0,.18);transition:transform .15s}
+.socicon:hover{transform:translateY(-2px)}
+.socicon svg{width:22px;height:22px;fill:#fff}
+.followrow{display:flex;gap:12px;justify-content:center;align-items:center;margin-top:26px;flex-wrap:wrap}
+.followrow .hand{font-size:34px;color:var(--orange);line-height:1;margin-right:4px}
+.follow{background:var(--ink);color:#fff;padding:78px 0;position:relative;overflow:hidden}
+.follow:before{content:"";position:absolute;right:-90px;top:-90px;width:300px;height:300px;border-radius:50%;background:rgba(169,201,139,.16)}
+.follow .wrap{text-align:center;position:relative}
+.follow h2{font-family:Caveat,cursive;font-weight:700;font-size:clamp(54px,8vw,104px);line-height:.95;color:#fff;letter-spacing:-1px}
+.follow h2 em{font-style:normal;color:var(--yolk)}
+.follow p{max-width:640px;margin:14px auto 0;font-size:19px;color:#d7e3cb}
+.follow .btns{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+.follow .soc{padding:18px 34px;font-size:19px;border-radius:18px}
+.follow .soc svg{width:34px;height:34px}
+.follow .soc span{text-align:left}
+.follow .soc b{font-size:22px}
+.follow .stat{margin-top:22px;font-size:14px;color:#aebf9f}
+.floatfollow{position:fixed;right:18px;bottom:18px;z-index:50;display:flex;align-items:center;gap:8px;background:#fff;border:2px solid var(--ink);border-radius:99px;padding:6px 8px 6px 16px;box-shadow:0 10px 26px rgba(40,50,20,.28)}
+.floatfollow span{font-family:Caveat,cursive;font-weight:700;font-size:26px;line-height:1}
+.fi{width:40px;height:40px;border-radius:50%;display:grid;place-items:center}
+.fi svg{width:22px;height:22px;fill:#fff}
+.fi:hover{transform:scale(1.08)}
+.foot2{padding:34px 0 40px;text-align:center;color:var(--mut);font-size:14px}
+.foot2 .followrow{margin:0 0 18px}
+@media(max-width:900px){.followrow .hand{width:100%;text-align:center;margin:0 0 2px}.follow .soc{width:100%;justify-content:center}.floatfollow{right:12px;bottom:12px;padding:5px 6px 5px 12px}.floatfollow span{font-size:22px}.fi{width:38px;height:38px}}
+
+.ueber{background:var(--mist);padding:92px 0;position:relative}
+.ueber:before{content:"";position:absolute;left:0;right:0;top:-1px;height:26px;background:var(--paper);clip-path:ellipse(60% 100% at 50% 0)}
+.ueber-grid{display:grid;grid-template-columns:1.25fr .9fr;gap:54px;align-items:center}
+.vid{position:relative;aspect-ratio:16/9;border:12px solid var(--orange);border-radius:10px;background:#2b3a27;box-shadow:0 26px 50px rgba(60,50,20,.28);transform:rotate(-1deg);overflow:hidden}
+.vid video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;background:#2b3a27}
+.vid:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,30,15,.05),rgba(20,30,15,.45));pointer-events:none;transition:opacity .3s}
+.vid.playing:after{opacity:0}
+.play{position:absolute;left:50%;top:50%;width:92px;height:92px;margin:-46px 0 0 -46px;border-radius:50%;border:0;background:#fff;box-shadow:0 12px 30px rgba(0,0,0,.35);cursor:pointer;display:grid;place-items:center;z-index:3;transition:transform .2s}
+.play:hover{transform:scale(1.08)}
+.play svg{width:42px;height:42px;fill:var(--orange);margin-left:5px}
+.vid.playing .play{display:none}
+.ribbon{position:absolute;left:14px;top:14px;z-index:3;background:var(--yolk);color:var(--ink);font-weight:800;font-size:12.5px;padding:5px 12px;border-radius:99px;letter-spacing:.3px}
+.vid.has-video .ribbon{display:none}
+.vcap{position:absolute;left:0;right:0;bottom:0;z-index:2;color:#fff;font-weight:700;font-size:15px;padding:14px 18px;background:linear-gradient(0deg,rgba(15,25,10,.75),transparent);pointer-events:none}
+.vid.playing .vcap{display:none}
+.vhint{margin-top:16px;font-size:13px;color:var(--mut)}
+.eyebrow2{display:inline-block;background:var(--sage);color:var(--ink);font-weight:800;font-size:13px;letter-spacing:.5px;padding:5px 14px;border-radius:99px;margin-bottom:8px}
+.todo{font-size:12px;font-weight:800;color:#8a6a00;background:#fff3c7;padding:1px 7px;border-radius:6px;white-space:nowrap}
+.vals{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+.vals div{background:#fff;border-radius:16px;padding:14px 8px;text-align:center;font-size:13px;font-weight:700;box-shadow:0 8px 18px rgba(60,80,40,.1)}
+.vals b{display:block;font-family:Caveat,cursive;font-size:24px;line-height:1;color:var(--orange);white-space:nowrap}
+.ueber .animals span{background:#fff;box-shadow:0 4px 10px rgba(60,80,40,.1)}
+.credits{max-width:860px;margin:18px auto 0;text-align:left;font-size:12.5px;color:var(--mut)}
+.credits summary{cursor:pointer;font-weight:800;text-align:center}
+.credits ul{margin:12px 0 8px 20px}
+.credits li{margin:3px 0}
+.credits a{color:#46603a;text-decoration:underline}
+@media(max-width:900px){.ueber-grid{grid-template-columns:1fr}.ueber{padding:64px 0}.play{width:70px;height:70px;margin:-35px 0 0 -35px}.play svg{width:32px;height:32px}.vals{grid-template-columns:1fr 1fr 1fr}}
+</style></head><body>
+<!-- illustrations used as sample images (placeholders until real photos exist) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="sheep" viewBox="0 0 200 150"><g fill="#fff" stroke="#2F3A2B" stroke-width="4"><circle cx="58" cy="72" r="34"/><circle cx="100" cy="56" r="38"/><circle cx="142" cy="72" r="34"/><circle cx="100" cy="88" r="34"/></g><ellipse cx="176" cy="74" rx="19" ry="24" fill="#3b3a2e"/><ellipse cx="164" cy="50" rx="8" ry="14" fill="#3b3a2e" transform="rotate(-25 164 50)"/><circle cx="180" cy="68" r="3" fill="#fff"/><g stroke="#2F3A2B" stroke-width="8" stroke-linecap="round"><path d="M72 112v30M118 116v26M142 108v30"/></g></symbol>
+  <symbol id="lamb" viewBox="0 0 200 150"><g fill="#fff" stroke="#2F3A2B" stroke-width="4"><circle cx="78" cy="96" r="24"/><circle cx="106" cy="86" r="27"/><circle cx="134" cy="96" r="24"/><circle cx="106" cy="108" r="24"/></g><ellipse cx="160" cy="96" rx="15" ry="19" fill="#3b3a2e"/><circle cx="165" cy="92" r="2.6" fill="#fff"/><g stroke="#2F3A2B" stroke-width="7" stroke-linecap="round"><path d="M88 126v20M124 128v18"/></g></symbol>
+  <symbol id="goat" viewBox="0 0 200 150"><ellipse cx="86" cy="84" rx="54" ry="30" fill="#F1E8D6" stroke="#2F3A2B" stroke-width="4"/><path d="M122 70c10-22 22-34 34-36 8 12 6 34-4 50-10 8-26 6-30-14z" fill="#F1E8D6" stroke="#2F3A2B" stroke-width="4" stroke-linejoin="round"/><path d="M142 36c-2-16 6-26 16-30M150 34c6-12 16-16 24-12" fill="none" stroke="#2F3A2B" stroke-width="5" stroke-linecap="round"/><path d="M150 84c-2 10-1 18 4 24" fill="none" stroke="#2F3A2B" stroke-width="5" stroke-linecap="round"/><ellipse cx="158" cy="60" rx="7" ry="4" fill="#fff"/><circle cx="148" cy="56" r="3" fill="#2F3A2B"/><ellipse cx="52" cy="76" rx="22" ry="14" fill="#C99A6B" opacity=".7"/><g stroke="#2F3A2B" stroke-width="7" stroke-linecap="round"><path d="M52 108v34M72 110v32M104 110v32M122 106v36"/></g><path d="M34 70c-8-2-14 0-18 6" stroke="#2F3A2B" stroke-width="5" fill="none" stroke-linecap="round"/></symbol>
+  <symbol id="hen" viewBox="0 0 200 150"><path d="M30 70c-18-6-22-28-8-38 6 14 18 20 30 20z" fill="#A9784A" stroke="#2F3A2B" stroke-width="3.5" stroke-linejoin="round"/><ellipse cx="88" cy="88" rx="52" ry="40" fill="#E9B26B" stroke="#2F3A2B" stroke-width="4"/><path d="M66 88c14 14 40 14 56 0" fill="none" stroke="#B9783A" stroke-width="4" stroke-linecap="round"/><circle cx="140" cy="50" r="22" fill="#E9B26B" stroke="#2F3A2B" stroke-width="4"/><path d="M130 30c0-10 6-14 10-8 2-8 12-8 12 2-2-2-4 0-6 4-3-3-6-2-6 4z" fill="#D63F3F" stroke="#2F3A2B" stroke-width="2.5"/><path d="M158 52l16 6-16 6z" fill="#F2A33A" stroke="#2F3A2B" stroke-width="2.5" stroke-linejoin="round"/><circle cx="146" cy="46" r="3.2" fill="#2F3A2B"/><path d="M156 66c2 10 0 14-4 14" fill="#D63F3F" stroke="#2F3A2B" stroke-width="2.5"/><g stroke="#C2742A" stroke-width="5" stroke-linecap="round"><path d="M80 126v18M104 126v18"/></g></symbol>
+  <symbol id="duck" viewBox="0 0 200 150"><path d="M0 128c20-10 40-10 60 0s40 10 60 0 40-10 80 0v22H0z" fill="#7fb6cf" opacity=".65"/><ellipse cx="96" cy="100" rx="56" ry="30" fill="#fff" stroke="#2F3A2B" stroke-width="4"/><path d="M130 80c4-22 8-36 22-38 14-2 20 12 14 22-4 8-14 8-14 18" fill="#fff" stroke="#2F3A2B" stroke-width="4" stroke-linejoin="round"/><circle cx="154" cy="48" r="17" fill="#fff" stroke="#2F3A2B" stroke-width="4"/><path d="M168 48l22 6-22 8z" fill="#F2A33A" stroke="#2F3A2B" stroke-width="3" stroke-linejoin="round"/><circle cx="158" cy="44" r="3.2" fill="#2F3A2B"/><path d="M52 98c14 6 30 6 44-2" fill="none" stroke="#C9C9C9" stroke-width="4" stroke-linecap="round"/></symbol>
+  <symbol id="eggs" viewBox="0 0 200 150"><path d="M20 76l16-18h128l16 18v44c0 8-6 14-14 14H34c-8 0-14-6-14-14z" fill="#cdb792" stroke="#2F3A2B" stroke-width="4" stroke-linejoin="round"/><g stroke="#2F3A2B" stroke-width="3.4"><ellipse cx="54" cy="84" rx="19" ry="25" fill="#F4E7CE"/><ellipse cx="100" cy="82" rx="19" ry="25" fill="#D9A66F"/><ellipse cx="146" cy="84" rx="19" ry="25" fill="#BFD8C6"/><ellipse cx="54" cy="116" rx="19" ry="21" fill="#E8C79A"/><ellipse cx="100" cy="116" rx="19" ry="21" fill="#F7F0DE"/><ellipse cx="146" cy="116" rx="19" ry="21" fill="#C9926A"/></g><path d="M46 72c3-6 8-8 12-8" stroke="#fff" stroke-width="4" stroke-linecap="round" fill="none" opacity=".8"/></symbol>
+  <symbol id="potatoes" viewBox="0 0 200 150"><path d="M20 82h160v56c0 4-4 8-8 8H28c-4 0-8-4-8-8z" fill="#C9A46C" stroke="#2F3A2B" stroke-width="4" stroke-linejoin="round"/><path d="M20 106h160M20 128h160M70 82v64M130 82v64" stroke="#8a6b3f" stroke-width="3"/><g stroke="#2F3A2B" stroke-width="3.5"><path d="M24 80c-4-20 14-32 32-28s34 10 28 26c-4 6-50 8-60 2z" fill="#D8B98A"/><path d="M78 78c-2-22 18-34 38-30s34 10 26 28c-6 6-58 8-64 2z" fill="#CDAA76"/><path d="M128 80c0-18 16-26 32-22s22 12 14 22c-6 4-42 6-46 0z" fill="#D8B98A"/></g><g fill="#8a6b3f"><circle cx="44" cy="66" r="2.6"/><circle cx="98" cy="60" r="2.6"/><circle cx="106" cy="70" r="2.6"/><circle cx="150" cy="70" r="2.6"/></g></symbol>
+  <symbol id="lammpack" viewBox="0 0 200 150"><rect x="22" y="36" width="156" height="92" rx="12" fill="#fff" stroke="#2F3A2B" stroke-width="4"/><rect x="32" y="46" width="136" height="72" rx="8" fill="#F5F0E4"/><g stroke="#2F3A2B" stroke-width="3.4" stroke-linejoin="round"><path d="M42 74c4-14 24-18 38-12s22 18 12 30-34 10-46 2z" fill="#B8454A"/><path d="M94 70c6-12 26-14 38-6s14 22 2 30-34 6-40-6z" fill="#C45A5E"/></g><path d="M52 74c6-6 16-8 24-4M104 74c6-4 14-4 20 0" stroke="#F2C7C0" stroke-width="3" fill="none" stroke-linecap="round"/><rect x="108" y="92" width="52" height="24" rx="4" fill="#fff" stroke="#2F3A2B" stroke-width="2.6"/><path d="M118 108c0-6 4-9 9-9s8 3 8 7" stroke="#2F3A2B" stroke-width="2.4" fill="none"/><path d="M142 104h12M142 110h8" stroke="#A9C98B" stroke-width="3" stroke-linecap="round"/></symbol>
+  <symbol id="glaeser" viewBox="0 0 200 150"><g stroke="#2F3A2B" stroke-width="4" stroke-linejoin="round"><rect x="34" y="52" width="62" height="78" rx="12" fill="#F2B84B"/><rect x="44" y="38" width="42" height="18" rx="5" fill="#fff"/><rect x="108" y="64" width="58" height="66" rx="12" fill="#C0454C"/><rect x="116" y="50" width="42" height="18" rx="5" fill="#fff"/></g><rect x="42" y="78" width="46" height="30" rx="4" fill="#fff" stroke="#2F3A2B" stroke-width="2.6"/><rect x="114" y="86" width="46" height="26" rx="4" fill="#fff" stroke="#2F3A2B" stroke-width="2.6"/><g stroke="#A9C98B" stroke-width="3" stroke-linecap="round"><path d="M50 90h30M50 98h20M122 96h30M122 104h18"/></g></symbol>
+  <symbol id="haus" viewBox="0 0 400 330"><path d="M0 250c80-40 150-40 220-8s120 24 180-6v94H0z" fill="#8fb56e"/><path d="M0 290c100-24 190-14 280 10s90 8 120 0v30H0z" fill="#7da95c"/><rect x="70" y="120" width="200" height="130" fill="#F6EEDC" stroke="#2F3A2B" stroke-width="4"/><path d="M52 124l118-76 118 76z" fill="#B65A3C" stroke="#2F3A2B" stroke-width="4" stroke-linejoin="round"/><rect x="92" y="148" width="42" height="44" fill="#BFE0EE" stroke="#2F3A2B" stroke-width="3.5"/><rect x="206" y="148" width="42" height="44" fill="#BFE0EE" stroke="#2F3A2B" stroke-width="3.5"/><rect x="146" y="178" width="46" height="72" fill="#A9784A" stroke="#2F3A2B" stroke-width="3.5"/><path d="M60 120h220" stroke="#2F3A2B" stroke-width="5"/><g stroke="#2F3A2B" stroke-width="3"><path d="M60 120v42M280 120v42M70 142h200M96 120v22M130 120v22M164 120v22M198 120v22M232 120v22M266 120v22"/></g><path d="M60 116h220l-14-26H74z" fill="#A9C98B" stroke="#2F3A2B" stroke-width="3.5" stroke-linejoin="round" opacity=".92"/><g transform="translate(290 232)"><g fill="#fff" stroke="#2F3A2B" stroke-width="3"><circle cx="20" cy="26" r="15"/><circle cx="38" cy="20" r="17"/><circle cx="56" cy="26" r="15"/><circle cx="38" cy="34" r="15"/></g><ellipse cx="74" cy="26" rx="10" ry="12" fill="#3b3a2e"/><path d="M26 44v14M52 44v14" stroke="#2F3A2B" stroke-width="5" stroke-linecap="round"/></g><circle cx="338" cy="66" r="26" fill="#F2B84B"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5zM17.2 5.8a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1z"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></symbol>
+</defs></svg>
+
+<div class="note">Konzeptentwurf A (v4) „Herz und Hand“ von Dual-Stack Studio · nicht veröffentlicht · Beispielfotos von Wikimedia Commons (Bildnachweis unten), später durch Andreas eigene Fotos ersetzt</div>
+<header><div class="wrap top">
+  <nav><a href="#produkte">Produkte</a><a href="#ueber">Über uns</a></nav>
+  <a class="logo" href="#">
+    <svg width="64" height="30" viewBox="0 0 64 30"><path d="M32 28C16 18 12 8 20 4c5-2 9 1 12 6 3-5 7-8 12-6 8 4 4 14-12 24z" fill="#A9C98B" stroke="#2F3A2B" stroke-width="2.4" stroke-linejoin="round"/><path d="M32 26V12" stroke="#2F3A2B" stroke-width="2" stroke-linecap="round"/></svg>
+    <span class="w">Biohof Wandl</span><span class="s">Bio · Schaf · Ei · Erdapfel</span></a>
+  <nav class="r"><a class="navbtn" href="#unterkunft">Unterkunft</a><a href="#info">Hofverkauf</a><a href="#kontakt">Kontakt</a><span class="socicons"><a class="socicon ig" href="https://www.instagram.com/biohof_wandl/" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a><a class="socicon fb" href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a></span></nav>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <div class="sign-wrap"><div class="string"></div>
+    <div class="sign"><h1><span>Bei uns läuft die Ware</span><span class="b">nicht vom Band,</span><span>wir schaffen noch mit</span><span class="b">Herz und Hand!</span></h1>
+      <p>Biobauernhof mit Schafzucht, Geflügelhaltung und ein wenig Ackerbau. Hier erhältst du Bio-Lamm, Bio-Eier und Bio-Kartoffeln.</p>
+      <div class="stamp"><div><b>Bio</b>vom Hof</div></div></div>
+  </div>
+  <div class="btnrow"><a class="btn" href="#produkte">Das gibt’s bei uns</a><a class="btn o" href="#unterkunft">Urlaub am Hof ↓</a></div>
+  <div class="followrow"><span class="hand">Folge uns!</span><a class="soc ig" href="https://www.instagram.com/biohof_wandl/" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg>Instagram</a><a class="soc fb" href="https://www.facebook.com/" target="_blank" rel="noopener"><svg><use href="#i-fb"/></svg>Facebook</a></div>
+</div></section>
+
+<section class="band" id="produkte"><div class="wrap">
+  <h2 class="hand">Frisch vom Hof</h2><p class="lead">Ehrlich erzeugt und direkt verkauft. Frag einfach an, was gerade da ist.</p>
+  <div class="tags">
+    <article class="tag"><div class="pic2"><img src="images/lammfleisch.jpg" alt="Rohes Lammfleisch mit Rosmarin" loading="lazy"></div><h3>Bio-Lamm</h3><p>Aus eigener Schafzucht: Fleisch zum Braten, Würste und mehr. Pakete: [folgt].</p><div class="row"><span>Saison: [folgt]</span><span>Anfragen →</span></div></article>
+    <article class="tag"><div class="pic2"><img src="images/eier.jpg" alt="Bio-Eier in der Packung" loading="lazy"></div><h3>Bio-Eier</h3><p>Bunt gemischt, von Hühnern aus Bio-Haltung. Preis und Abholung: [folgt].</p><div class="row"><span>Das ganze Jahr: [folgt]</span><span>Anfragen →</span></div></article>
+    <article class="tag"><div class="pic2"><img src="images/kartoffeln.jpg" alt="Frisch geerntete Kartoffeln im Korb" loading="lazy"></div><h3>Bio-Kartoffeln</h3><p>Aus eigenem Ackerbau, ökologisch erzeugt. Sorten und Mengen: [folgt].</p><div class="row"><span>Ernte: [folgt]</span><span>Anfragen →</span></div></article>
+  </div>
+  <div class="more"><span class="hand">Und noch mehr vom Hof</span>
+    <div class="chips"><span class="chip">Nudeln</span><span class="chip">Marmelade</span><span class="chip">Honig</span><span class="chip">Gewürzmischungen</span><span class="chip">Wein</span><span class="chip">Würste</span><span class="chip">Alpaka-Socken</span></div>
+    <p class="small">Dazu Bio-Produkte von befreundeten Bauern: Rohmilch, Käse, Rindfleisch. · Auswahl laut Instagram und Airbnb [bitte bestätigen]</p></div>
+</div></section>
+
+<section class="ueber" id="ueber"><div class="wrap">
+  <div class="ueber-grid">
+    <div>
+      <div class="vid" id="vid">
+        <video id="aboutVideo" preload="metadata" playsinline poster="images/weide.jpg">
+          <source id="aboutSrc" src="video/andrea-ueber-uns.mp4" type="video/mp4">
+        </video>
+        <span class="ribbon" id="vnote">Video folgt</span>
+        <button class="play" id="vplay" type="button" aria-label="Video abspielen"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></button>
+        <div class="vcap">Andrea erzählt vom Hof, dazwischen Bilder von den Tieren und der Arbeit</div>
+      </div>
+      <p class="vhint">Beispielvideo aus den Mustertieren (ohne Andrea). Zum Ersetzen einfach die Datei <b>video/andrea-ueber-uns.mp4</b> überschreiben: 16:9, 60 bis 90 Sekunden.</p>
+    </div>
+    <div>
+      <span class="eyebrow2">Über uns</span>
+      <h2 class="hand">Lerne Andrea kennen</h2>
+      <div class="quote">Landwirtin aus Tradition. Biobetrieb aus Überzeugung.</div>
+      <p class="lead" style="margin-top:0">Auf unserem Hof in Untergriesbach leben Schafe, Ziegen, Hühner und Enten, dazu gibt es ein wenig Ackerbau. Wie wir arbeiten, was uns wichtig ist und warum wir direkt vom Hof verkaufen, erzählt dir Andrea im Video. <span class="todo">[Text mit Andrea abstimmen]</span></p>
+      <div class="animals"><span>🐑 Schafe</span><span>🐐 Ziegen</span><span>🐔 Hühner</span><span>🦆 Enten</span></div>
+      <div class="vals"><div><b>Bio</b>ökologisch erzeugt</div><div><b>Direkt</b>vom Hof zu dir</div><div><b>Herz &amp; Hand</b>statt Fließband</div></div>
+      <div class="cta2" style="margin-top:22px"><a class="btn o" href="#info">Hofverkauf &amp; Märkte</a><a class="btn ghost" href="#unterkunft">Urlaub am Hof</a></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="gal"><div class="wrap"><h2 class="hand">Einblicke vom Hof</h2><p class="lead">So könnte es aussehen. Hier kommen später Andreas eigene Fotos hin.</p>
+  <div class="grid"><figure class="polaroid"><div class="im" style="background:linear-gradient(160deg,#DCEBC4,#A9C98B)"><img src="images/schafe.jpg" alt="Schafe auf einer grünen Weide" loading="lazy"></div><p>Die Schafe</p><small>Beispielfoto</small></figure><figure class="polaroid"><div class="im" style="background:linear-gradient(160deg,#EAF2D6,#BCD8A0)"><img src="images/lamm.jpg" alt="Zwei Lämmer fressen Gras" loading="lazy"></div><p>Die Lämmer</p><small>Beispielfoto</small></figure><figure class="polaroid"><div class="im" style="background:linear-gradient(160deg,#EAF2D6,#BCD8A0)"><img src="images/ziege.jpg" alt="Weiße Ziege mit Hörnern" loading="lazy"></div><p>Die Ziegen</p><small>Beispielfoto</small></figure><figure class="polaroid"><div class="im" style="background:linear-gradient(160deg,#D6EBF4,#A6CFE0)"><img src="images/zicklein.jpg" alt="Junge Ziege auf einem Baumstumpf" loading="lazy"></div><p>Zicklein</p><small>Beispielfoto</small></figure><figure class="polaroid"><div class="im" style="background:linear-gradient(160deg,#FFF1CC,#F1D79B)"><img src="images/huhn.jpg" alt="Braunes Huhn auf der Wiese" loading="lazy"></div><p>Unsere Hühner</p><small>Beispielfoto</small></figure><figure class="polaroid"><div class="im" style="background:linear-gradient(160deg,#D6EBF4,#A6CFE0)"><img src="images/enten.jpg" alt="Enten und Gänse am Futternapf" loading="lazy"></div><p>Enten am Futter</p><small>Beispielfoto</small></figure><figure class="polaroid"><div class="im" style="background:linear-gradient(160deg,#F7E9D3,#E8C99A)"><img src="images/huehnermobil.jpg" alt="Hühnermobil mit Hühnern auf der Wiese" loading="lazy"></div><p>Hühner im Freiland</p><small>Beispielfoto</small></figure><figure class="polaroid"><div class="im" style="background:linear-gradient(160deg,#FFF3CF,#F2D486)"><img src="images/honig.jpg" alt="Gläser mit Honig" loading="lazy"></div><p>Honig</p><small>Beispielfoto</small></figure></div></div></section>
+
+<section class="follow" id="folgen"><div class="wrap">
+  <h2>Folge uns <em>auf Instagram &amp; Facebook!</em></h2>
+  <p>Hier siehst du jeden Tag, was bei uns auf dem Hof los ist: die Tiere, die Ernte, neue Produkte und die nächsten Markttermine.</p>
+  <div class="btns"><a class="soc ig" href="https://www.instagram.com/biohof_wandl/" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg><span><small>Folge uns · @biohof_wandl</small><b>Instagram</b></span></a><a class="soc fb" href="https://www.facebook.com/" target="_blank" rel="noopener"><svg><use href="#i-fb"/></svg><span><small>Gefällt dir · Biohof Wandl</small><b>Facebook</b></span></a></div>
+  <p class="stat">892 Follower auf Facebook · 517 auf Instagram (Stand Oktober 2026) [Link zur Facebook-Seite folgt]</p>
+</div></section>
+
+<section class="unterkunft" id="unterkunft"><div class="wrap">
+  <div class="house"><div class="pic"><span>Beispielbild · echte Fotos auf Airbnb</span><svg viewBox="0 0 400 330"><use href="#haus"/></svg></div>
+    <div class="rating"><b>4,97 ★</b>31 Bewertungen · Gästefavorit auf Airbnb</div></div>
+  <div><h2 class="hand">Urlaub am Schafhof</h2>
+    <p class="lead">Ferienwohnung direkt neben dem Hof: Ruhe auf dem Land, Tiere zum Anschauen und frische Bio-Produkte gleich nebenan.</p>
+    <ul class="facts"><li>100 m², bis zu 4 Gäste</li><li>2 Schlafzimmer, Küche</li><li>Balkon mit Talblick</li><li>WLAN und Parkplatz</li><li>Haustiere erlaubt</li><li>Selbst-Check-in</li></ul>
+    <p class="hint" style="margin:0 0 14px">Bach vor der Tür, Badesee 10 km, Passau 20 km. Ab 5 Nächten gibt es ein Überraschungspaket mit Hofprodukten.</p>
+    <div class="cta2"><a class="btn o" href="https://www.airbnb.com/h/schafhof" target="_blank" rel="noopener">Auf Airbnb ansehen ↗</a><a class="btn ghost" href="#kontakt">Frage zur Unterkunft</a></div>
+    <p class="hint">Preise und Buchung laufen direkt über Airbnb. Außerdem: Stellplatz für Wohnmobile (Landvergnügen).</p></div>
+</div></section>
+
+<section class="info" id="info"><div class="wrap"><h2 class="hand">So kommst du zu uns</h2>
+  <div class="g"><div class="c"><h3>Hofverkauf</h3><p>Untergriesbach bei Passau · [Adresse] · [Öffnungszeiten]</p></div><div class="c"><h3>Märkte</h3><p>[Markt, Tag, Uhrzeit]</p></div><div class="c"><h3>Stellplatz</h3><p>Stellplatz für Wohnmobile im Landvergnügen-Netz. [Details folgen]</p></div></div>
+</div></section>
+
+<section class="kontakt" id="kontakt"><div class="wrap"><h2 class="hand">Schreib uns!</h2><p class="lead">Wir melden uns, sobald es geht. Oder ruf an: [Telefon].</p>
+  <div class="card"><form onsubmit="return false"><div class="r2"><input placeholder="Dein Name"><input placeholder="E-Mail oder Telefon"></div>
+    <select><option>Ich interessiere mich für …</option><option>Bio-Lamm</option><option>Bio-Eier</option><option>Bio-Kartoffeln</option><option>Weitere Hofprodukte</option><option>Unterkunft</option><option>Etwas anderes</option></select>
+    <textarea placeholder="Menge, Wunschtermin, Fragen …"></textarea>
+    <label class="chk"><input type="checkbox"><span>Ich habe die Datenschutzerklärung gelesen und bin einverstanden, dass meine Angaben zur Beantwortung der Anfrage verwendet werden.</span></label>
+    <button class="btn o" type="button" style="justify-self:start;font-size:16px">Anfrage senden</button></form></div>
+</div></section>
+<footer class="foot2"><div class="followrow"><span class="hand">Folge uns!</span><a class="soc ig" href="https://www.instagram.com/biohof_wandl/" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg>Instagram</a><a class="soc fb" href="https://www.facebook.com/" target="_blank" rel="noopener"><svg><use href="#i-fb"/></svg>Facebook</a></div>© Biohof Wandl · Impressum · Datenschutz
+<details class="credits"><summary>Bildnachweis der Beispielfotos</summary><ul><li><b>Schafe auf der Weide</b>: „Sheep grazing meadow at Bawk House Farm - geograph.org.uk - 2693002.jpg“ von Dr Duncan Pepper, CC BY-SA 2.0 · <a href="https://commons.wikimedia.org/wiki/File:Sheep_grazing_meadow_at_Bawk_House_Farm_-_geograph.org.uk_-_2693002.jpg" target="_blank" rel="noopener">Quelle</a></li><li><b>Weide mit Schafen</b>: „Sheep near The Meadows Farm - geograph.org.uk - 8293574.jpg“ von Philip Halling, CC BY-SA 2.0 · <a href="https://commons.wikimedia.org/wiki/File:Sheep_near_The_Meadows_Farm_-_geograph.org.uk_-_8293574.jpg" target="_blank" rel="noopener">Quelle</a></li><li><b>Lämmer</b>: „Lambs, Morden Hall Park.jpg“ von Keven Law, Los Angeles, USA, CC BY-SA 2.0 · <a href="https://commons.wikimedia.org/wiki/File:Lambs,_Morden_Hall_Park.jpg" target="_blank" rel="noopener">Quelle</a></li><li><b>Ziegen</b>: „Capra aegagrus hircus, Neuss (DE) -- 2023 -- 0012.jpg“ von Anil Öztas, CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Capra_aegagrus_hircus,_Neuss_(DE)_--_2023_--_0012.jpg" target="_blank" rel="noopener">Quelle</a></li><li><b>Zicklein</b>: „Capra aegagrus hircus, Neuss (DE) -- 2022 -- 0174.jpg“ von Anil Öztas, CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Capra_aegagrus_hircus,_Neuss_(DE)_--_2022_--_0174.jpg" target="_blank" rel="noopener">Quelle</a></li><li><b>Hühner</b>: „Chicken free range 1.jpg“ von AnemoneProjectors (talk) (Flickr), CC BY-SA 2.0 · <a href="https://commons.wikimedia.org/wiki/File:Chicken_free_range_1.jpg" target="_blank" rel="noopener">Quelle</a></li><li><b>Hühner im Freiland</b>: „Mobiles Stallsystem &quot;Hühnermobil&quot; der Firma Weiland.jpg“ von Lulatsch3000, CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Mobiles_Stallsystem_%22H%C3%BChnermobil%22_der_Firma_Weiland.jpg" target="_blank" rel="noopener">Quelle</a></li><li><b>Enten</b>: „Domestic ducks don&#x27;t need a pond.jpg“ von Julyro, CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Domestic_ducks_don%27t_need_a_pond.jpg" target="_blank" rel="noopener">Quelle</a></li><li><b>Bio-Eier</b>: „Eggs 20220410 173301.jpg“ von Ka23 13, CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Eggs_20220410_173301.jpg" target="_blank" rel="noopener">Quelle</a></li><li><b>Kartoffeln</b>: „Dieng Potatoes.jpg“ von Midori, CC BY-SA 3.0 · <a href="https://commons.wikimedia.org/wiki/File:Dieng_Potatoes.jpg" target="_blank" rel="noopener">Quelle</a></li><li><b>Lammfleisch</b>: „Raw lamb cutlets with shredded ginger and rosemary.jpg“ von Photo by User:Salimfadhley, CC BY-SA 3.0 · <a href="https://commons.wikimedia.org/wiki/File:Raw_lamb_cutlets_with_shredded_ginger_and_rosemary.jpg" target="_blank" rel="noopener">Quelle</a></li><li><b>Honig</b>: „Honey miele.jpg“ von Marcobeltrametti, CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Honey_miele.jpg" target="_blank" rel="noopener">Quelle</a></li></ul><p>Alle Fotos über Wikimedia Commons, Lizenzen: CC BY-SA 2.0 / 3.0 / 4.0. Nur Platzhalter für diesen Entwurf.</p></details></footer>
+<div class="floatfollow"><span>Folge uns</span><a class="fi ig" href="https://www.instagram.com/biohof_wandl/" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a><a class="fi fb" href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a></div>
+<script>
+(function(){
+  var box=document.getElementById('vid'), v=document.getElementById('aboutVideo'), b=document.getElementById('vplay'), src=document.getElementById('aboutSrc'), note=document.getElementById('vnote');
+  var failed=false;
+  function mark(){ if(v.readyState>=1) box.classList.add('has-video'); }
+  src.addEventListener('error',function(){failed=true;box.classList.remove('has-video');});
+  v.addEventListener('loadedmetadata',mark);
+  mark();
+  b.addEventListener('click',function(){
+    if(failed || (v.readyState===0 && v.networkState===3)){note.textContent='Das Video wird noch geschnitten';note.style.display='inline-block';return;}
+    box.classList.add('playing');v.setAttribute('controls','');
+    var p=v.play(); if(p&&p.catch){p.catch(function(){});}
+  });
+  v.addEventListener('ended',function(){box.classList.remove('playing');v.removeAttribute('controls');});
+})();
+</script>
+</body></html>
